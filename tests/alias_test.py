@@ -50,10 +50,10 @@ for user in ['user@mailu.io', 'admin@mailu.io', 'user/with/slash@mailu.io']:
 
     message = email.message_from_bytes(data[0][1])
 
-    if message['delivered-to'] == user
-        print("Success: Delivered-To is the user", user)
+    if message['delivered-to'] == user:
+        print("Success: Delivered-To is the same as the mailbox", user)
     else:
-        print("Failed Delivered-To does not match user", user)
+        print("Failed Delivered-To does not match the mailbox", user)
         sys.exit(99)
 
     typ, data = imap_server.search(None, 'ALL')
